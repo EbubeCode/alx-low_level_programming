@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c $CFILE -O $(basename -s .c $CFILE).o
+gcc -c $CFILE -O $(echo $(basename -s .c $CFILE).o)
