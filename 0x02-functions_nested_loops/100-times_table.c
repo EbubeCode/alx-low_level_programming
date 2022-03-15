@@ -103,8 +103,11 @@ void print_times_table(int n)
 		while (j <= n)
 		{
 			k = i * j;
-			if (j == n && j != 0)
-				seperate_print(k, 0, 1);
+			if (j == n)
+				if (j == 0)
+					seperate_print(k, 0, 0);
+				else
+					seperate_print(k, 0, 1);
 			else if (j > 0)
 				seperate_print(k, 1, 1);
 			else
