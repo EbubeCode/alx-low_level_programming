@@ -65,7 +65,6 @@ void seperate_print(int n, int x)
 		_putchar(',');
 		_putchar(' ');
 	}
-	_putchar('\n');
 }
 
 /**
@@ -86,12 +85,13 @@ void times_table(void)
 		while (j <= 9)
 		{
 			k = i * j;
-			if (i == 9 && j == 9)
+			if (j == 9)
 				seperate_print(k, 0);
 			else
 				seperate_print(k, 1);
 			j++;
 		}
+		_putchar('\n');
 		i++;
 	}
 }
