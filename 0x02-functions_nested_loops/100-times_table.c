@@ -57,41 +57,25 @@ void seperate_print(int n, int x, int a)
 	int j;
 	int k;
 
-	if (n < 100)
-	{
-		i = n % 10;
-		j = (n / 10);
-		if (j > 0)
-			switch_print(j);
-		else if (a == 1)
-			_putchar(' ');
+
+	k = n / 100;
+	j = (n % 100) / 10;
+	i = (n % 100) % 10;
+	if (k > 0)
+		switch_print(k);
+	else if (a == 1)
+		_putchar(' ');
+	if (j > 0)
+		switch_print(j);
+	else if (a == 1)
+		_putchar(' ');
 		switch_print(i);
-		if (x == 1)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-	}
-	else
+	if (x == 1)
 	{
-		k = n / 100;
-		j = (n % 100) / 10;
-		i = (n % 100) % 10;
-		if (k > 0)
-			switch_print(k);
-		else if (a == 1)
-			_putchar(' ');
-		if (j > 0)
-			switch_print(j);
-		else if (a == 1)
-			_putchar(' ');
-		switch_print(i);
-		if (x == 1)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
+		_putchar(',');
+		_putchar(' ');
 	}
+
 
 }
 
