@@ -59,6 +59,8 @@ void seperate_print(int n, int x)
 	j = (n / 10);
 	if (j > 0)
 		switch_print(j);
+	else
+		_putchar(' ');
 	switch_print(i);
 	if (x == 1)
 	{
