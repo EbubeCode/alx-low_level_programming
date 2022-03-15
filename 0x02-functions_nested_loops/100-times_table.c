@@ -67,6 +67,8 @@ void seperate_print(int n, int x, int a)
 		_putchar(' ');
 	if (j > 0)
 		switch_print(j);
+	else if (k > 0)
+		switch_print(j);
 	else if (a == 1)
 		_putchar(' ');
 	switch_print(i);
