@@ -59,5 +59,5 @@ int print_last_digit(int n)
 	else
 		abs = x;
 	switch_print(abs);
-	return (x);
+	return (abs);
 }
