@@ -29,18 +29,16 @@ int _atoi(char *s)
 	int j;
 	char *a;
 	unsigned int n;
-	int sn;
+	int neg;
 
 	i = 0;
 	x = 0;
 	a = s;
-	sn = 0;
+	neg = 0;
 	for (; *a != '\0'; ++a)
 	{
 		if (*a == '-')
-			sn++;
-		else if (*a == '+')
-			sn--;
+			neg++;
 		if (*a >= 48 && *a <= 57)
 		{
 			x++;
@@ -58,7 +56,7 @@ int _atoi(char *s)
 			n += (pows(10, (x - j)) * (s[(i + j - 1)] - '0'));
 		}
 
-		if (sn > 0)
+		if (neg % 2 > 0)
 			n = 0 - n;
 	}
 	return (n);
