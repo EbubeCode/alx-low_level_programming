@@ -28,7 +28,7 @@ int _atoi(char *s)
 	int x;
 	int j;
 	char *a;
-	int n;
+	unsigned int n;
 	int sn;
 
 	i = 0;
