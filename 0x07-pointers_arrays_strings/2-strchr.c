@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 /**
  * _strchr - locates a character c in the string s
  * @c: character to locate
@@ -7,7 +9,7 @@
  */
 char *_strchr(char *s, char c)
 {
-	for (; *si != '\0';  s++)
+	for (; *s != '\0';  s++)
 	{
 		if (*s == c)
 			return (s);
