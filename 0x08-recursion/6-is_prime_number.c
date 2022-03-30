@@ -23,7 +23,7 @@ int get_prime(int x, int y)
 int is_prime_number(int n)
 {
 	if (n < 0)
-		n = 0 - n;
+		return (0);
 	if (n == 1)
 		return (0);
 	return (get_prime(n, 2));
