@@ -20,9 +20,8 @@ unsigned int _strspn(char *s, char *accept)
 			if (*a == s[i])
 				n++;
 		}
-		if (*a == s[i])
-			n++;
-		if (i > n)
+		
+		if (i > (n - 1))
 			break;
 	}
 	return (n);
