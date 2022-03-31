@@ -18,7 +18,10 @@ unsigned int _strspn(char *s, char *accept)
 		for (; *a != '\0'; a++)
 		{
 			if (*a == s[i])
+			{
 				n++;
+				break;
+			}
 		}
 		
 		if (i > (n - 1))
