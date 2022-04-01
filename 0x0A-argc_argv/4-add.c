@@ -25,10 +25,7 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (0);
 			}
-			if (n > 0)
-				sum += n;
-			else
-				sum -= n;
+			sum += n;
 		}
 
 		printf("%d\n", sum);
