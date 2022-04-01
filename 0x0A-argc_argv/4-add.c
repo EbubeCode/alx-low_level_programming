@@ -20,12 +20,13 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			n = atoi(argv[i]);
-			if (n <= 0)
+			if (n == 0 && argv[i] != '0')
 			{
 				printf("Error\n");
 				return (0);
 			}
-			sum += n;
+			else if (n > 0)
+				sum += n;
 		}
 
 		printf("%d\n", sum);
