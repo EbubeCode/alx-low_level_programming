@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			char *a = argv[i];
+
 			for (; *a != '\0'; a++)
 			{
 				if (*a < '0' || *a > '9')
