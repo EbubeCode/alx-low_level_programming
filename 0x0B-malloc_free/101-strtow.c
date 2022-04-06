@@ -33,6 +33,8 @@ char **strtow(char *str)
 			arr[j] = (char *)malloc(sizeof(char) * n);
 			if (arr[j++] == NULL)
 				return (NULL);
+			if (*a == '\0')
+				break;
 		}
 	i = 0;
 	for (a = str; *a != '\0'; a++)
