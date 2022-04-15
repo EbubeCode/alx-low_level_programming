@@ -10,8 +10,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	char array[] = {'c', 'i', 'f', 's'};
-	char *s, *a = (char *) format;
+	char array[] = {'c', 'i', 'f', 's'}, *s, *a = (char *) format;
 	va_list l;
 	int i;
 
@@ -43,9 +42,12 @@ void print_all(const char * const format, ...)
 			continue;
 		}
 		a++;
-		if (*a != '\0')
-			printf(", ");
+		if (*a == '\0')
+		{
+			printf("\n");
+			break;
+		}
+		printf(", ");
 	}
 	va_end(l);
-	printf("\n");
 }
