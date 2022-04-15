@@ -1,10 +1,8 @@
 #include "3-calc.h"
 /**
- * get_op_func - gets the pointer to function that 
+ * get_op_func - gets the pointer to function that
  * maps to an operator
  * @s: operator passed as argument to the program
- * @a: first integer
- * @b: second integer
  * Return: pointer to method
  */
 int (*get_op_func(char *s))(int, int)
