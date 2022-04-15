@@ -19,9 +19,9 @@ void print_all(const char * const format, ...)
 	while (*a != '\0')
 	{
 		i = 0;
-		while (array[i++] != *a && i <= 4)
-			;
-		switch (--i)
+		while (i < 4 && array[i] != *a)
+			i++;
+		switch (i)
 		{
 		case 0:
 			printf("%c", va_arg(l, int));
