@@ -16,9 +16,8 @@ void print_all(const char * const format, ...)
 	int i;
 
 	va_start(l, format);
-	while (*a != NULL)
-	{
-		b = "\n";
+	while (*a != '\0')
+	{	
 		i = 0;
 		while (i < 4 && array[i] != *a)
 			i++;
