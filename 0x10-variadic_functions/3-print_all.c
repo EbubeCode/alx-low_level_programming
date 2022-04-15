@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 			printf("%d", va_arg(l, int));
 			break;
 		case 2:
-			printf("%f", va_arg(l, double));
+			printf("%.5f", va_arg(l, double));
 			break;
 		case 3:
 			s = va_arg(l, char *);
