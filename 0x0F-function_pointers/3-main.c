@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 	a = argv[2];
-	if (*a == '+' || *a == '-' || *a == '*' || *a == '/'
-			|| *a == '%')
+	if ((*a == '+' || *a == '-' || *a == '*' || *a == '/'
+			|| *a == '%') && *(a + 1) == '\0')
 	{
 		x = atoi(argv[1]);
 		y = atoi(argv[3]);
