@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	while (*a != '\0')
 	{
 		i = 0;
-		while (array[i++] != *a)
+		while (array[i++] != *a && i <= 4)
 			;
 		switch (--i)
 		{
