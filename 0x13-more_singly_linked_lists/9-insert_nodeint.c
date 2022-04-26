@@ -52,7 +52,10 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 	}
 	temp->n = n;
 	temp->next = current;
-	prev->next = temp;
+	if (idx == 0)
+		*head = temp;
+	else
+		prev->next = temp;
 
 	return (temp);
 }
