@@ -8,9 +8,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int b = 0x1000000000000000;
+	unsigned long int b = 0x8000000000000000;
 	unsigned long int a = n & b;
-	int i = 3;
+	int i = 0;
 
 	if (n == 0)
 	{
