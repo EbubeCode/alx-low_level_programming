@@ -1,6 +1,40 @@
 #include "main.h"
 
 /**
+ * read_write - reads and writes to file
+ * @frd: file to read from
+ * @ftd: file to write to
+ * @av: command line arguments
+ *
+ * Return: 0 success -1 otherwise
+ */
+int read_write(int frd, int ftd, char **av)
+{
+	int bytes;
+	char buf[1024];
+
+	do {
+		bytes = read(frd, buf, 1024);
+		if (bytes < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			close(frd);
+			close(ftd);
+			exit(98);
+		}
+		bytes = write(ftd, buf, bytes);
+		if (bytes < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			close(frd);
+			close(ftd);
+			exit(99);
+		}
+	} while (bytes == 1024);
+	return (0);
+}
+
+/**
  * main - entry point of application
  * @ac: number of argument to application
  * @av: pointer to array of aruments
@@ -9,8 +43,7 @@
  */
 int main(int ac, char **av)
 {
-	int frd, ftd, bytes, cfrd, cftd;
-	char buf[1024];
+	int frd, ftd, cfrd, cftd;
 
 	if (ac != 3)
 	{
@@ -30,11 +63,7 @@ int main(int ac, char **av)
 		close(frd);
 		exit(99);
 	}
-	do {
-		bytes = read(frd, buf, 1024);
-		if (bytes > 0)
-			write(ftd, buf, bytes);
-	} while (bytes == 1024);
+	read_write(frd, ftd, av);
 	cfrd = close(frd);
 	cftd = close(ftd);
 	if (cfrd == -1 || cftd == -1)
