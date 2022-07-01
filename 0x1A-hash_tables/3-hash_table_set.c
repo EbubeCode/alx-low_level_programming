@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht,
 	unsigned long int index;
 	hash_node_t *temp = NULL, *index_node;
 
-	if (ht == NULL || strlen(key) == 0)
+	if (ht == NULL || key == NULL || strlen(key) == 0)
 		return (0);
 	
 	temp = malloc(sizeof(hash_node_t));
