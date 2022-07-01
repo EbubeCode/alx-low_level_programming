@@ -1,6 +1,27 @@
 #include "hash_tables.h"
 
 /**
+ * check_empty - checks for empty string
+ * @str: string
+ *
+ * Return: 1 if empty else 0
+ */
+int check_empty(const char *str)
+{
+	int i = 0;
+
+	if (str == NULL)
+		return (1);
+	while (str[i])
+	{
+		if (str[i] != ' ' && str[i] != '\n')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/**
  * hash_table_set - adds an element to the hash table
  * @ht: hash table
  * @key: key of the element
@@ -14,9 +35,9 @@ int hash_table_set(hash_table_t *ht,
 	unsigned long int index;
 	hash_node_t *temp = NULL, *index_node;
 
-	if (ht == NULL || key == NULL || strlen(key) == 0)
+	if (ht == NULL || check_empty(key))
 		return (0);
-	
+
 	temp = malloc(sizeof(hash_node_t));
 	if (temp == NULL)
 		return (0);
