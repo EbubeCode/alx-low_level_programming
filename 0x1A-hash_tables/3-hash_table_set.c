@@ -42,7 +42,7 @@ int hash_table_set(hash_table_t *ht,
 	if (temp == NULL)
 		return (0);
 	temp->key = (char *)key;
-	temp->value = (char *)value;
+	temp->value = strdup(value);
 	temp->next = NULL;
 
 	index = key_index((const unsigned char *)key, ht->size);
