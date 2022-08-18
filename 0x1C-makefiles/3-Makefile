@@ -12,7 +12,7 @@ all: ${OBJ}
 	${CC} -c -o $@ $<
 
 clean:
-	rm -f *~ school 
+	rm -f *~ ${NAME}
 oclean:
 	rm -f ${OBJ}
 fclean: clean oclean
