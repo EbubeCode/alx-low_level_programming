@@ -5,15 +5,15 @@ OBJ=$(SRC:%.c=%.o)
 NAME=school
 RM=rm
 
-all: ${OBJ}
+all: ${OBJ} ${NAME}
 	${CC} ${OBJ} -o ${NAME}
 %.o: %.c
 	${CC} -c -o $@ $<
 
-clean:
+clean: ${NAME}
 	rm -f *~ ${NAME}
 
-oclean:
+oclean: ${OBJ}
 	rm -f ${OBJ}
 
 fclean: clean oclean
