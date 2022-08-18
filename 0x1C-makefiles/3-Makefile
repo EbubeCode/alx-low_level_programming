@@ -11,10 +11,10 @@ all: ${OBJ} ${NAME}
 	${CC} -c -o $@ $<
 
 clean: ${NAME}
-	rm -f *~ ${NAME}
+	${RM} -f *~ ${NAME}
 
 oclean: ${OBJ}
-	rm -f ${OBJ}
+	${RM} -f ${OBJ}
 
 fclean: clean oclean
 
