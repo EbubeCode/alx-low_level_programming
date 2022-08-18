@@ -5,12 +5,12 @@ OBJ=$(SRC:%.c=%.o)
 NAME=school
 RM=rm
 
-all: ${OBJ} ${NAME}
+all: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 %.o: %.c
 	${CC} -c -o $@ $<
 
-clean: ${NAME}
+clean:
 	${RM} -f *~ ${NAME}
 
 oclean:
