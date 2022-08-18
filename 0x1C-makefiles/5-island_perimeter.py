@@ -1,17 +1,28 @@
 #!/usr/bin/python3
-
-# grid function
+"""grid function"""
 
 def island_perimeter(grid):
+    """island perimeter"""
     if grid is not None and type(grid) == list:
         perim = 0
         for i in range(len(grid)):
-            if type(i) != list:
-                return None
-            for j in range(len(i)):
-                if i == 0 and j == 0:
-                    if grid[i - 1][j - 1] == 0:
+            for j in range(len(grid[i])):
+                if i != 0:
+                    if check_grid(grid, i, j, i - 1, j):
+                        perim += 1
+                if i != len(grid) - 1:
+                    if check_grid(grid, i, j, i + 1, j):
+                        perim += 1
+                if j != 0:
+                    if check_grid(grid, i, j, i, j - 1):
+                        perim += 1
+                if j != len(grid[i]) - 1:
+                    if check_grid(grid, i, j, i, j + 1):
                         perim += 1
 
-        return 12
+        return perim
 
+def check_grid(grid, i, j, x, y):
+    """check grid"""
+    if grid[i][j] == 1 and grid[x][y] == 0:
+        return True
