@@ -1,4 +1,4 @@
-
+.PHONY = all clean oclean fclean re
 CC=gcc
 SRC=main.c school.c
 OBJ=$(SRC:%.c=%.o)
@@ -13,7 +13,7 @@ all: ${OBJ}
 clean:
 	rm -f *~ ${NAME}
 
-oclean: ${OBJ}
+oclean:
 	rm -f ${OBJ}
 
 fclean: clean oclean
