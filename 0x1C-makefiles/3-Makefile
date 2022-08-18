@@ -13,7 +13,7 @@ all: ${OBJ} ${NAME}
 clean: ${NAME}
 	${RM} -f *~ ${NAME}
 
-oclean: ${OBJ}
+oclean:
 	${RM} -f ${OBJ}
 
 fclean: clean oclean
