@@ -12,7 +12,10 @@ all: ${OBJ}
 
 clean:
 	rm -f *~ ${NAME}
-oclean:
+
+oclean: ${OBJ}
 	rm -f ${OBJ}
+
 fclean: clean oclean
+
 re: oclean all
